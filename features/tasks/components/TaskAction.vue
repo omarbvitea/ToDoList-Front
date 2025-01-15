@@ -7,6 +7,7 @@
         color="tertiary"
         density="comfortable"
         variant="text"
+        :disabled="true"
         v-bind="activatorProps"
       />
       <v-btn
@@ -26,7 +27,12 @@
   </v-dialog>
   <v-dialog v-else-if="type === 'new'" v-model="dialogStates[0]" width="auto">
     <template v-slot:activator="{ props: activatorProps }">
-      <v-btn prepend-icon="mdi-plus" variant="outlined" v-bind="activatorProps">
+      <v-btn
+        prepend-icon="mdi-plus"
+        variant="outlined"
+        v-bind="activatorProps"
+        :disabled="true"
+      >
         new task
       </v-btn>
     </template>
